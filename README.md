@@ -8,6 +8,7 @@ A simple notetaking app created to learn the basics of WPF, apply C# concepts an
 - Notebooks to categorize notes
 - Drawing feature to insert doodles onto a note
 - Light/Dark theme toggle
+- Clean and modern UI
 
 ## Potential Improvements
 - Save system
