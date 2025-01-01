@@ -1,0 +1,73 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!--For datagrid textblock-->
+    <Style x:Key="TextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Foreground" Value="{DynamicResource Text}" />
+        <Setter Property="Background" Value="Transparent" />
+    </Style>
+
+    <!-- Style for Datagrid TextBox (editing mode) -->
+    <Style x:Key="TextBoxEditingStyle" TargetType="TextBox">
+        <Setter Property="Background" Value="{DynamicResource Midtone}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Text}"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="BorderThickness" Value="1"/>
+    </Style>
+
+    <!--<Style TargetType="DataGridCell">
+        <Setter Property="Background" Value="{DynamicResource Dark}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Text}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Midtone}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+    </Style>-->
+
+    <!--Actually for datagrid but it couldn't be in its own resourcedictionary-->
+    <Style TargetType="{x:Type DataGridCell}">
+        <Setter Property="Background" Value="{DynamicResource Dark}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Text}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource Midtone}"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type DataGridCell}">
+                    <Border Background="{TemplateBinding Background}" BorderBrush="Transparent" BorderThickness="0" SnapsToDevicePixels="True">
+                        <ContentPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Background" Value="{DynamicResource HoverOver}"/>
+                <Setter Property="Foreground" Value="{DynamicResource Text}"/>
+                <Setter Property="BorderBrush" Value="{DynamicResource Midtone}"/>
+            </Trigger>
+            <Trigger Property="IsKeyboardFocusWithin" Value="True">
+                <Setter Property="BorderBrush" Value="{DynamicResource {x:Static DataGrid.FocusBorderBrushKey}}"/>
+                <Setter Property="Background" Value="{DynamicResource HoverOver}"/>
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsSelected" Value="true"/>
+                    <Condition Property="Selector.IsSelectionActive" Value="false"/>
+                </MultiTrigger.Conditions>
+                <Setter Property="Background" Value="{DynamicResource Midtone}"/>
+                <Setter Property="BorderThickness" Value="0"/>
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}}"/>
+            </MultiTrigger>
+            <Trigger Property="IsEnabled" Value="false">
+                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type DataGridColumnHeader}">
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Background" Value="{DynamicResource Light}"/>
+        <Setter Property="Foreground" Value="{DynamicResource Text}"/>
+    </Style>
+
+    <SolidColorBrush x:Key="{x:Static DataGrid.FocusBorderBrushKey}" Color="#FF000000"/>
+
+</ResourceDictionary>

@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--<SolidColorBrush Color="#1B1E22" x:Key="Dark"/>
+    <SolidColorBrush Color="#2F343A" x:Key="Midtone"/>
+    <SolidColorBrush Color="#414953" x:Key="Light"/>
+    <SolidColorBrush Color="#F2F2F2" x:Key="Text"/>
+    <SolidColorBrush Color="#39A2AE" x:Key="Accent"/>
+    <SolidColorBrush Color="#96CAD0" x:Key="HoverOver"/>
+    <SolidColorBrush Color="#555D67" x:Key="DisabledButton"/>
+    <SolidColorBrush Color="#24282E" x:Key="WindowBar"/>-->
+
+    <SolidColorBrush Color="#FFFFFF" x:Key="Dark"/>
+    <SolidColorBrush Color="#E7E7E7" x:Key="Midtone"/>
+    <SolidColorBrush Color="#DADADA" x:Key="Light"/>
+    <SolidColorBrush Color="#141414" x:Key="Text"/>
+    <SolidColorBrush Color="#39A2AE" x:Key="Accent"/>
+    <SolidColorBrush Color="#ADECF3" x:Key="HoverOver"/>
+    <SolidColorBrush Color="#C3C3C3" x:Key="DisabledButton"/>
+    <SolidColorBrush Color="#F3F3F3" x:Key="WindowBar"/>
+
+</ResourceDictionary>
